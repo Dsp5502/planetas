@@ -2,7 +2,7 @@ console.warn('Delcarar variables');
 let nombrePlanetas = ['Tierra', 'marte'],
   distancia = [5, 3, '67'];
 
-const tamaño = [];
+const tamaño = [10, 20, 30];
 
 console.log({ nombrePlanetas });
 console.log({ distancia });
@@ -43,3 +43,15 @@ for (const key in distancia) {
     ? console.log('Se encontró la Distancia')
     : console.log('No se encontró la distancia');
 }
+
+console.warn('forEach');
+nombrePlanetas.push('Jupiter');
+nombrePlanetas.forEach((value, index) => {
+  console.log(`planeta ${index}, ${value} `);
+});
+
+console.warn('Map');
+let resultadoMap = nombrePlanetas.map((planetas, index) => {
+  return `El planeta ${planetas} tiene el tamaño de :${tamaño[index]}`;
+});
+console.log(resultadoMap);
